@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const nodes = new Map();
-const get = id => { if (!nodes.has(id)) nodes.set(id, { id, value: '15', style: { setProperty() {} }, setAttribute() {}, addEventListener() {} }); return nodes.get(id); };
+const get = id => { if (!nodes.has(id)) nodes.set(id, { id, value: '15', querySelectorAll() { return []; }, style: { setProperty() {} }, setAttribute() {}, addEventListener() {} }); return nodes.get(id); };
 const context = { Intl, console, document: { getElementById: get }, window: { addEventListener() {} }, navigator: {}, location: { protocol: 'file:' } };
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(__dirname + '/app.js', 'utf8'), context);

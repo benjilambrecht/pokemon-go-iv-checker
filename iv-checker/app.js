@@ -6,7 +6,9 @@ function update() {
   const values = sliders.map(slider => Number(slider.value));
   sliders.forEach((slider, i) => {
     document.getElementById(`${slider.id}-value`).textContent = values[i];
-    slider.style.setProperty('--fill', `${values[i] / 15 * 100}%`);
+    document.getElementById(`${slider.id}-blocks`).querySelectorAll('.iv-block').forEach(block => {
+      block.classList.toggle('filled', Number(block.dataset.point) <= values[i]);
+    });
     slider.setAttribute('aria-valuetext', `${values[i]} van 15`);
   });
   const total = values.reduce((sum, value) => sum + value, 0);
