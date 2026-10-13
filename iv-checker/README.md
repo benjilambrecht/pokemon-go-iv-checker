@@ -8,7 +8,7 @@ Open index.html voor de checker. Voor installatie en offline gebruik: voer vanui
 
 ## GitHub Pages
 
-De workflow .github/workflows/publish-iv-checker.yml publiceert uitsluitend deze appmap. Stel in GitHub Settings → Pages de bron in op GitHub Actions. De workflow start bij een push naar main en kan handmatig worden gestart. Relatieve assetpaden ondersteunen hosting onder een repositorypad.
+GitHub Pages publiceert automatisch vanaf de branch main, map / (Deploy from a branch). De app staat in iv-checker; de homepage verwijst daarheen. Een optionele Actions-workflow staat als voorbeeld in deployment/publish-iv-checker.yml.example. Relatieve assetpaden ondersteunen hosting onder een repositorypad.
 
 ## Beginscherm
 
