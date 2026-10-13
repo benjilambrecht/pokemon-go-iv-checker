@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const nodes = new Map();
-const get = id => { if (!nodes.has(id)) nodes.set(id, { id, value: '15', querySelectorAll() { return []; }, style: { setProperty() {} }, setAttribute() {}, addEventListener() {} }); return nodes.get(id); };
+const get = id => { if (!nodes.has(id)) nodes.set(id, { id, value: '15', classList: { toggle(name, enabled) { this[name] = enabled; } }, querySelectorAll() { return []; }, style: { setProperty() {} }, setAttribute() {}, addEventListener() {} }); return nodes.get(id); };
 const context = { Intl, console, document: { getElementById: get }, window: { addEventListener() {} }, navigator: {}, location: { protocol: 'file:' } };
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(__dirname + '/app.js', 'utf8'), context);
@@ -14,6 +14,9 @@ for (let a = 0; a <= 15; a++) for (let d = 0; d <= 15; d++) for (let h = 0; h <=
   assert.equal(get('tag').textContent, String(Math.round(total / 45 * 100)));
   assert.equal(get('total').textContent, `${total} / 45 punten`);
   assert.equal(get('values').textContent, `${a} · ${d} · ${h}`);
+  assert.equal(get('attack-blocks').classList.perfect, a === 15);
+  assert.equal(get('defense-blocks').classList.perfect, d === 15);
+  assert.equal(get('hp-blocks').classList.perfect, h === 15);
   assert.equal(get('attack-value').textContent, a);
   assert.equal(get('defense-value').textContent, d);
   assert.equal(get('hp-value').textContent, h);

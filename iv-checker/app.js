@@ -5,6 +5,7 @@ function update() {
   const values = sliders.map(slider => Number(slider.value));
   sliders.forEach((slider, i) => {
     document.getElementById(`${slider.id}-value`).textContent = values[i];
+    document.getElementById(`${slider.id}-blocks`).classList.toggle('perfect', values[i] === 15);
     document.getElementById(`${slider.id}-blocks`).querySelectorAll('.iv-block').forEach(block => {
       block.classList.toggle('filled', Number(block.dataset.point) <= values[i]);
     });

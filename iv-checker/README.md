@@ -1,6 +1,6 @@
 # Pokémon GO IV Checker
 
-Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening met afronding op hele procenten en een overeenkomstige Pokémon GO tag. Groen toont de ingevulde waarde, rood de resterende punten.
+Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening met afronding op hele procenten en een overeenkomstige Pokémon GO tag. Gevulde punten zijn oranje bij waarden 1–14. Elke afzonderlijke balk wordt rood bij 15, onafhankelijk van de andere stats. Ongevulde punten zijn neutraal grijs. De selectorpositie en bediening blijven gelijk.
 
 ## Lokaal gebruiken
 
@@ -21,3 +21,11 @@ Open de HTTPS-website op je telefoon. iPhone: Safari → Delen → Zet op begins
 Live gecontroleerd in Edge met mobiel formaat 390×844: homepageverwijzing, slider- en toetsenbordbediening, geen horizontale overflow, alle appassets HTTP 200, offline herladen en geen JavaScript-fouten. De mobiele screenshot is visueel gecontroleerd. Installatie op een echte telefoon blijft een apparaatgebonden controle.
 
 Onafhankelijke fan-tool, niet verbonden aan Niantic, Nintendo of The Pokémon Company.
+
+## Bronnen voor de beoordelingskleuren
+
+- https://gaming.stackexchange.com/questions/357315/how-accurate-is-the-new-appraisal-system — vol en rood betekent 15 voor die stat.
+- https://www.reddit.com/r/TheSilphRoad/comments/1lmf9t5/the_appraisal_screen_for_hyper_training_pokemon/ — directe waarneming dat een afzonderlijke gemaximaliseerde stat onmiddellijk rood wordt.
+- https://www.serebii.net/pokemongo/appraisal.shtml — drie segmenten van vijf; de rode viersterrenbanner geldt afzonderlijk voor 15/15/15.
+
+De kleurregel volgt de beoordeling; exacte kleurcodes zijn gekozen voor leesbaarheid op het donkere appontwerp.
