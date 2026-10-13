@@ -1,6 +1,6 @@
 # Pokémon GO IV Checker
 
-Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening met afronding op hele procenten en een overeenkomstige Pokémon GO tag. Gevulde punten zijn oranje bij waarden 1–14. Elke afzonderlijke balk wordt rood bij 15, onafhankelijk van de andere stats. Ongevulde punten zijn neutraal grijs. De selectorpositie en bediening blijven gelijk.
+Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening met afronding op hele procenten en een overeenkomstige Pokémon GO tag. Gevulde punten zijn oranje bij waarden 1–14. Elke afzonderlijke balk wordt rood bij 15, onafhankelijk van de andere stats. Ongevulde punten zijn neutraal grijs. Onder elke rij blokjes staat een aparte aanraakvriendelijke schuifbalk. Het handvat overlapt de blokjes niet; waarden en kleuren bewegen direct mee.
 
 ## Lokaal gebruiken
 

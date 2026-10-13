@@ -1,6 +1,6 @@
 'use strict';
-const CACHE = 'pokemon-iv-checker-v4';
-const FILES = ['./', './index.html', './style.css?v=4', './app.js?v=4', './manifest.webmanifest', './icon.svg', './icon-180.png', './icon-192.png', './icon-512.png'];
+const CACHE = 'pokemon-iv-checker-v5';
+const FILES = ['./', './index.html', './style.css?v=5', './app.js?v=5', './manifest.webmanifest', './icon.svg', './icon-180.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('pokemon-iv-checker-') && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
