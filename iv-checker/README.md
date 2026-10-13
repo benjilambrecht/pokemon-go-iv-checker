@@ -29,3 +29,7 @@ Onafhankelijke fan-tool, niet verbonden aan Niantic, Nintendo of The Pokémon Co
 - https://www.serebii.net/pokemongo/appraisal.shtml — drie segmenten van vijf; de rode viersterrenbanner geldt afzonderlijk voor 15/15/15.
 
 De kleurregel volgt de beoordeling; exacte kleurcodes zijn gekozen voor leesbaarheid op het donkere appontwerp.
+
+## Great League-selectie
+
+Bij Aanval 0–5, Verdediging 10–15 en HP 10–15 toont Tag exact `Great League (maximaal 1.500 CP)`. Buiten deze inclusieve marges blijft de gehele percentagetag staan. Het hoofdpercentage wordt altijd berekend. Ideale marges zijn Aanval 0–2 en beide andere stats 13–15; overige kandidaten binnen de selectie krijgen Goede marges. Dit is een algemene eerste PvP-selectie, geen soortspecifieke ranking of garantie. Sommige Pokémon vereisen 15/15/15; de huidige CP wordt niet gecontroleerd.

@@ -13,7 +13,15 @@ function update() {
   });
   const total = values.reduce((sum, value) => sum + value, 0);
   const percentage = Math.round(total / 45 * 100);
-  document.getElementById('tag').textContent = String(percentage);
+  const [attack, defense, hp] = values;
+  const greatLeague = attack <= 5 && defense >= 10 && hp >= 10;
+  const ideal = attack <= 2 && defense >= 13 && hp >= 13;
+  const tag = document.getElementById('tag');
+  tag.textContent = greatLeague ? 'Great League (maximaal 1.500 CP)' : String(percentage);
+  tag.classList.toggle('league', greatLeague);
+  const note = document.getElementById('pvp-note');
+  note.hidden = !greatLeague;
+  note.textContent = greatLeague ? `${ideal ? 'Ideale' : 'Goede'} marges · eerste PvP-selectie. CP niet gecontroleerd.` : '';
   document.getElementById('percentage').textContent = `${percentage}%`;
   document.getElementById('total').textContent = `${total} / 45 punten`;
   document.getElementById('values').textContent = values.join(' · ');
