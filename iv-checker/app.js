@@ -1,7 +1,6 @@
 'use strict';
 // Elke slider bevat een geheel aantal IV-punten tussen 0 en 15.
 const sliders = ['attack', 'defense', 'hp'].map(id => document.getElementById(id));
-const format = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 });
 function update() {
   const values = sliders.map(slider => Number(slider.value));
   sliders.forEach((slider, i) => {
@@ -12,7 +11,9 @@ function update() {
     slider.setAttribute('aria-valuetext', `${values[i]} van 15`);
   });
   const total = values.reduce((sum, value) => sum + value, 0);
-  document.getElementById('percentage').textContent = `${format.format(total / 45 * 100)}%`;
+  const percentage = Math.round(total / 45 * 100);
+  document.getElementById('tag').textContent = String(percentage);
+  document.getElementById('percentage').textContent = `${percentage}%`;
   document.getElementById('total').textContent = `${total} / 45 punten`;
   document.getElementById('values').textContent = values.join(' · ');
 }

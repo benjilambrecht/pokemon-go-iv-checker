@@ -1,6 +1,6 @@
 # Pokémon GO IV Checker
 
-Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening en Nederlandse getalnotatie. Groen toont de ingevulde waarde, rood de resterende punten.
+Nederlandstalige statische app zonder afhankelijkheden. Drie aanraakvriendelijke balkjes voor Aanval, Verdediging en HP (0–15), directe berekening met afronding op hele procenten en een overeenkomstige Pokémon GO tag. Groen toont de ingevulde waarde, rood de resterende punten.
 
 ## Lokaal gebruiken
 
@@ -16,7 +16,7 @@ Open de HTTPS-website op je telefoon. iPhone: Safari → Delen → Zet op begins
 
 ## Controles
 
-`node iv-checker/check.cjs` vanuit de projectmap controleert alle 4.096 IV-combinaties, percentages en weergegeven waarden. Deze controle is geslaagd, net als de manifestassetcontrole en serviceworker-syntaxiscontrole. Voorbeelden: 0/0/0 → 0%; 15/15/15 → 100%; 10/10/10 → 66,7%; 15/14/13 → 93,3%.
+`node iv-checker/check.cjs` vanuit de projectmap controleert alle 4.096 IV-combinaties, percentages en weergegeven waarden. Deze controle is geslaagd, net als de manifestassetcontrole en serviceworker-syntaxiscontrole. Voorbeelden: 0/0/0 → 0%; 15/15/15 → 100%; 10/10/10 → 67%; 15/14/13 → 93%.
 
 Live gecontroleerd in Edge met mobiel formaat 390×844: homepageverwijzing, slider- en toetsenbordbediening, geen horizontale overflow, alle appassets HTTP 200, offline herladen en geen JavaScript-fouten. De mobiele screenshot is visueel gecontroleerd. Installatie op een echte telefoon blijft een apparaatgebonden controle.
 

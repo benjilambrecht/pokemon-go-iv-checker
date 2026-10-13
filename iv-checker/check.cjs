@@ -10,14 +10,22 @@ for (let a = 0; a <= 15; a++) for (let d = 0; d <= 15; d++) for (let h = 0; h <=
   for (const [id, value] of [['attack', a], ['defense', d], ['hp', h]]) get(id).value = String(value);
   vm.runInContext('update()', context);
   const total = a + d + h;
-  assert.equal(get('percentage').textContent, new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 1 }).format(total / 45 * 100) + '%');
+  assert.equal(get('percentage').textContent, Math.round(total / 45 * 100) + '%');
+  assert.equal(get('tag').textContent, String(Math.round(total / 45 * 100)));
   assert.equal(get('total').textContent, `${total} / 45 punten`);
   assert.equal(get('values').textContent, `${a} · ${d} · ${h}`);
   assert.equal(get('attack-value').textContent, a);
   assert.equal(get('defense-value').textContent, d);
   assert.equal(get('hp-value').textContent, h);
 }
-console.log('PASS: alle 4096 IV-combinaties, percentages en weergegeven waarden.');
+console.log('PASS: alle 4096 IV-combinaties, gehele percentages, tags en weergegeven waarden.');
+for (const [total, expected] of [[45,100],[44,98],[43,96],[42,93],[41,91],[40,89],[39,87],[38,84]]) {
+ get('attack').value='15';get('defense').value='15';get('hp').value=String(total-30);
+ vm.runInContext('update()',context);
+ assert.equal(get('percentage').textContent, expected+'%');
+ assert.equal(get('tag').textContent, String(expected));
+}
+console.log('PASS: alle acht opgegeven tabelwaarden voor percentage en tag.');
 const manifest = JSON.parse(fs.readFileSync(__dirname + '/manifest.webmanifest', 'utf8'));
 for (const icon of manifest.icons) assert.ok(fs.existsSync(__dirname + '/' + icon.src));
 new vm.Script(fs.readFileSync(__dirname + '/sw.js', 'utf8'));
