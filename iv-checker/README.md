@@ -18,6 +18,6 @@ Open de HTTPS-website op je telefoon. iPhone: Safari → Delen → Zet op begins
 
 `node iv-checker/check.cjs` vanuit de projectmap controleert alle 4.096 IV-combinaties, percentages en weergegeven waarden. Deze controle is geslaagd, net als de manifestassetcontrole en serviceworker-syntaxiscontrole. Voorbeelden: 0/0/0 → 0%; 15/15/15 → 100%; 10/10/10 → 66,7%; 15/14/13 → 93,3%.
 
-Visuele browsercontrole en installatie op een echte telefoon zijn nog niet uitgevoerd doordat de browserruntime niet startte. Test op de telefoon ook offline herladen na het eerste online bezoek.
+Live gecontroleerd in Edge met mobiel formaat 390×844: homepageverwijzing, slider- en toetsenbordbediening, geen horizontale overflow, alle appassets HTTP 200, offline herladen en geen JavaScript-fouten. De mobiele screenshot is visueel gecontroleerd. Installatie op een echte telefoon blijft een apparaatgebonden controle.
 
 Onafhankelijke fan-tool, niet verbonden aan Niantic, Nintendo of The Pokémon Company.
